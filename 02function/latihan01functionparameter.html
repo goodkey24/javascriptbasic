@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Function Parameter</title>
+  </head>
+
+  <body>
+    <script>
+      // 1 Fungsi Kalkulator
+      function penjumlahan( a, b )
+      {
+        return a + b
+      }
+      function pengurangan( a, b )
+      {
+        return a - b
+      }
+      function perkalian( a, b )
+      {
+        return a * b
+      }
+      function pembagian( a, b )
+      {
+        if ( b === 0 )
+        {
+          return "Tidak dapat membagi dengan nol"
+        } else
+        {
+          return a / b
+        }
+      }
+      // Memanggil fungsi dan mencetak hasil
+      let a = 20;
+      let b = 10;
+      let hasilTambah = penjumlahan( a, b );
+      let hasilKurang = pengurangan( a, b );
+      let hasilKali = perkalian( a, b );
+      let hasilBagi = pembagian( a, b );
+
+      document.writeln( `<p> Hasil Penjumlahan ${ a } + ${ b } = ${ hasilTambah }</p>` );
+      document.writeln( `<p> Hasil Pengurangan ${ a } - ${ b } = ${ hasilKurang }</p>` );
+      document.writeln( `<p> Hasil Perkalina ${ a } * ${ b } = ${ hasilKali }</p>` );
+      document.writeln( `<p> Hasil Pembagian ${ a } / ${ b } = ${ hasilBagi } </p>` );
+
+
+    </script>
+  </body>
+
+</html>
