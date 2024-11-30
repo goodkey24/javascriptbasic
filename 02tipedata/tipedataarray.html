@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipe Data Array</title>
+  </head>
+
+  <body>
+    <script>
+      let arrayKosong = []
+      // menambahkan atau mengisi array kosong
+      arrayKosong = [ "Miftahul", "Al", "Khairi" ]
+      console.table( arrayKosong )
+      // dengan cara push
+      arrayKosong.push( "Budi", "Arie" )
+      console.table( arrayKosong )
+      // mengetahui panjang suatu array
+      console.log( "Panjang Array Kosong :" + "" + arrayKosong.length )
+      // mengakses array dengan index
+      console.log( `Isi arrayKosong Index ke-0 : ${ arrayKosong[ 0 ] }` );
+      // mengubah value dengan index array
+      arrayKosong[ 0 ] = "Judin";
+      console.log( `Isi arrayKosong Index ke-0 setelah di ubah : ${ arrayKosong[ 0 ] }` );
+      // menghapus array dengan index
+      delete arrayKosong[ 1 ]
+      console.table( arrayKosong )
+
+    </script>
+  </body>
+
+</html>
