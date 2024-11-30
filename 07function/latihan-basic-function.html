@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Basic Function</title>
+
+  </head>
+
+  <body>
+    <script>
+      const num = parseInt( prompt( "Cek Bilangan Prima" ), 10 );
+
+      if ( num <= 1 )
+      {
+        alert( `${ num } adalah bukan bilangan prima` );
+      } else
+      {
+        let isPrime = true;
+        for ( let i = 2; i < num; i++ )
+        {
+          if ( num % i === 0 )
+          {
+            isPrime = false;
+            break; // Keluar dari loop jika menemukan pembagi
+          }
+        }
+        if ( isPrime )
+        {
+          alert( `${ num } adalah bilangan prima` );
+        } else
+        {
+          alert( `${ num } adalah bukan bilangan prima` );
+        }
+      }
+
+
+    </script>
+  </body>
+
+</html>
