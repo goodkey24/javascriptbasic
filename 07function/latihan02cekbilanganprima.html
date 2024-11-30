@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Function Cek Bilangan Prima</title>
+  </head>
+
+  <body>
+    <script>
+      // Function mencari bilangan prima
+      function cekBilanganPrima( angka )
+      {
+        if ( angka <= 1 )
+        {
+          return document.writeln( `<p> ${ angka } bukan bilangan prima)</p>` );
+        }
+
+        for ( let i = 2; i <= Math.sqrt( angka ); i++ )
+        {
+          if ( angka % i === 0 )
+          {
+            return document.writeln( `<p> ${ angka } bukan bilangan prima)</p>` );
+          }
+        }
+
+        return document.writeln( `<p> ${ angka } adalah bilangan prima </p>` );
+      }
+      cekBilanganPrima( 13 );
+      // End Function mencari bilangan prima
+
+      // Function mencari faktorial dari suatu angka
+      function Faktorial( angka )
+      {
+        document.writeln( `<p> Faktorial dari angka ${ angka } </p>` );
+        let result = 1;
+        for ( let i = 1; i <= angka; i++ )
+        {
+          result = result * i;
+          document.writeln( `<p> ${ result } x ${ i } = ${ result } </p>` );
+        }
+        return document.writeln( `<p> Faktorial dari angka ${ angka } adalah ${ result } </p>` );
+      }
+      Faktorial( 9 );
+      // End mencari faktorial dari suatu angka
+
+      // Function mencari nilai maximum dan minimum
+      function maxMin( arr )
+      {
+        let maximum = Math.max( ...arr );
+        let minimum = Math.min( ...arr );
+        let result = ( [ maximum, minimum ] );
+        return result;
+      }
+      console.log( maxMin( [ 12, 45, 7, 23, 56, 89, 34 ] ) );
+      /**
+       * Function to find the minimum and maximum values in an array.
+       * This function uses a loop to iterate over the array and compare
+       * each element with the current minimum and maximum values.
+       * @param {Array} arr - The array to process.
+       * @returns {Array} - An array with the minimum and maximum values.
+       */
+      function getMinMax( arr )
+      {
+        let maksimum = arr[ 0 ];
+        let minimum = arr[ 0 ];
+        for ( let i = 0; i < arr.length; i++ )
+        {
+          if ( maksimum < arr[ i ] )
+          {
+            // If the current element is greater than the current maximum,
+            // update the maximum.
+            maksimum = arr[ i ];
+            // document.writeln( `nilai maksimum sekarang ${ maksimum }</br>` );
+          }
+          if ( minimum > arr[ i ] )
+          {
+            // If the current element is less than the current minimum,
+            // update the minimum.
+            minimum = arr[ i ];
+            // document.writeln( `nilai minimum sekarang ${ minimum }</br>` );
+          }
+
+        }
+
+        // Return an array with the minimum and maximum values.
+        document.writeln( `Nilai Maksimum dan Nilai Minimum dari array [ 12, 45, 7, 23, 56, 89, 34 ] </br>` )
+        return document.writeln( `Nilai Maksimum = ${ maksimum } </br> Nilai Minimum = ${ minimum }` )
+      }
+      ( getMinMax( [ 12, 45, 7, 23, 56, 89, 34 ] ) );
+      // End Function mencari nilai maximum dan minimum
+    </script>
+  </body>
+
+</html>
