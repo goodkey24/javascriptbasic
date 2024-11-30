@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipe Data Object</title>
+  </head>
+
+  <body>
+    <script>
+      // Membuat object kosong
+      let objectKosong = {};
+      // ubah atribut object / property
+      objectKosong[ "nama" ] = "Miftahul";
+      objectKosong[ "umur" ] = 27;
+      objectKosong[ "pekerjaan" ] = "Programmer";
+      objectKosong[ "alamat" ] = "Bandung";
+      console.table( objectKosong );
+      // mengakses object
+      console.log( objectKosong[ "nama" ] );
+      // menghapus object
+      delete objectKosong[ "umur" ];
+      console.table( objectKosong );
+
+      // menginisialisi object
+      let objectBaru = {
+        nama_depan: "Miftahul",
+        nama_belakang: "Khairi",
+        pekerjaan: "Programmer",
+        alamat: "Bandung"
+      };
+      // mengakses salah satu object
+      console.log( `Nama Depan : ${ objectBaru[ "nama_depan" ] }` );
+      // mengakses semua object
+      console.table( objectBaru );
+    </script>
+  </body>
+
+</html>
