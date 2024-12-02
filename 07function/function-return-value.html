@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Return Value</title>
+  </head>
+
+  <body>
+    <script>
+      function sayHello( firstName, lastName )
+      {
+        const say = `Hello ${ firstName } ${ lastName }`;
+        return say;
+      }
+      const result = sayHello( "Miftahul", "Khairi" );
+      document.writeln( result );
+
+      function getFinalValue( value )
+      {
+        if ( value > 90 )
+        {
+          return "A";
+        } else if ( value > 80 )
+        {
+          return "B";
+        } else if ( value > 70 )
+        {
+          return "C";
+        } else if ( value > 60 )
+        {
+          return "D";
+        } else
+        {
+          return "E";
+        }
+      }
+      function getFinalValue( value )
+      {
+        const gradeThresholds = [
+          { min: 90, grade: 'A' },
+          { min: 80, grade: 'B' },
+          { min: 70, grade: 'C' },
+          { min: 60, grade: 'D' },
+          { min: 0, grade: 'E' }
+        ];
+
+        for ( const { min, grade } of gradeThresholds )
+        {
+          if ( value >= min )
+          {
+            return grade;
+          }
+        }
+      }
+      document.writeln( getFinalValue( 76 ) );
+
+      function isContains( array, searchValue )
+      {
+        for ( const element of array )
+        {
+          console.log( `Iterasi Element ${ element }` );
+          if ( element === searchValue )
+          {
+            return true;
+          }
+        }
+        return false;
+      }
+      const array = [ 1, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44 ];
+      const search = 20;
+      const found = isContains( array, search );
+      document.writeln( `<p>${ found } </p>` );
+
+    </script>
+  </body>
+
+</html>
