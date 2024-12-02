@@ -10,32 +10,12 @@
 
   <body>
     <script>
-      const num = parseInt( prompt( "Cek Bilangan Prima" ), 10 );
-
-      if ( num <= 1 )
+      // Latihan Basic Function
+      function sayHelloWolrld()
       {
-        alert( `${ num } adalah bukan bilangan prima` );
-      } else
-      {
-        let isPrime = true;
-        for ( let i = 2; i < num; i++ )
-        {
-          if ( num % i === 0 )
-          {
-            isPrime = false;
-            break; // Keluar dari loop jika menemukan pembagi
-          }
-        }
-        if ( isPrime )
-        {
-          alert( `${ num } adalah bilangan prima` );
-        } else
-        {
-          alert( `${ num } adalah bukan bilangan prima` );
-        }
+        console.log( "Hellow World" );
       }
-
-
+      sayHelloWolrld();
     </script>
   </body>
 

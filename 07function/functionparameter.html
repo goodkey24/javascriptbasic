@@ -9,12 +9,14 @@
 
   <body>
     <script>
-      function sayHello( firstName, lastName )
+      // latihan function parameter
+      function informasiOrang( nama, umur )
       {
-        document.writeln( `<p>Hello ${ firstName } ${ lastName }<p>` );
+        const jenisKelamin = nama.endsWith( "a" ) ? "wanita" : "pria";
+        console.log( `${ nama } adalah seorang ${ jenisKelamin } berusia ${ umur } tahun.` );
       }
 
-      sayHello( "Hafizh", "Rizky" );
+      informasiOrang( "Miftahul", 27 );
     </script>
   </body>
 
