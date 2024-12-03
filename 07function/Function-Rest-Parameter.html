@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Function Rest Parameter</title>
+ </head>
+
+ <body>
+  <script>
+   // function sum( name, ...data )
+   // {
+   //  let total = 0;
+   //  for ( const item of data )
+   //  {
+   //   total += item;
+   //  }
+   //  console.info( `Total ${ name } is ${ total }` );
+   // }
+   // sum( 'Orange', 2, 3, 4, 5, 6, 7, 8 );
+
+   // function fungsiRest( ...args )
+   // {
+   //  console.info( `Isi dari Rest Parameter ${ args }` );
+   //  return args.join( " " );
+
+   // }
+   // function fungsiRestArray( ...args )
+   // {
+   //  for ( const item of args )
+   //  {
+   //   console.info( `Isi dari Argument Rest ${ item }` )
+   //  }
+   //  return args;
+   // }
+   // fungsiRestArray( 21, 11, 31, 42, 52, 66, 78 )
+   // fungsiRest( 2, 1, 3, 4, 5, 66, 78 );
+
+   function functionRestObj( ...args )
+   {
+    for ( const obj of args )
+    {
+     for ( const key in obj )
+     {
+      // console.info( `Isi parameter args = ${ JSON.stringify( obj ) }` );
+      console.log( `Object ${ key } : ${ obj[ key ] }` );
+     }
+
+    }
+   }
+   let objek = { a: 21, b: 11, c: 31, d: 42, e: 52, f: 66, g: 78 }
+   functionRestObj( objek );
+   /*
+   function functionRestObj menerima parameter yang tidak terbatas
+   dan melakukan iterasi pada setiap argument yang di terima
+   1. for(const obj of args) : Looping pada setiap argument yang diterima
+   2. for(const key in obj ) : Looping setiap properti(key) dari objek yang sedang di iterasi
+   */
+
+   // == Spread Syntax ==
+   // let array = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
+   // console.log( ...array );
+   function spreadSyntax( ...args )
+   {
+    for ( const item of args )
+    {
+     console.log( item );
+    }
+   }
+   let array = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
+   spreadSyntax( ...array );
+
+   function sum( name, ...data )
+   {
+    let total = 0;
+    for ( const item of data )
+    {
+     total += item;
+    }
+    console.info( `Total ${ name } is ${ total }` );
+   }
+   let array1 = [ 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 ];
+   sum( 'Orange', arrayy ); /* hasil : Total Orange is 010,20,30,40,50,60,70,80,90,100
+
+   Karena Anda memanggil fungsi sum dengan array array1 sebagai argumen kedua, tanpa menggunakan spread syntax (...).
+
+    Dalam fungsi sum, argumen kedua ...data diharapkan untuk menerima elemen-elemen dari array sebagai argumen individu. Namun, karena Anda tidak menggunakan spread syntax, maka array1 diteruskan sebagai satu argumen ke fungsi sum.
+
+    Dalam fungsi sum, loop for (const item of data) tidak akan berjalan karena data hanya berisi satu elemen, yaitu array array1 itu sendiri. Oleh karena itu, total tidak akan diubah dan akan tetap menjadi 0.
+
+    Namun, karena Anda menggunakan template string untuk mencetak hasil, maka total yang masih 0 akan diubah menjadi string kosong (""), dan kemudian diikuti oleh string yang dihasilkan dari array array1 menggunakan metode toString().
+
+    Metode toString() pada array akan menghasilkan string yang berisi semua elemen array, dipisahkan oleh koma. Oleh karena itu, hasil di console menjadi: Total Orange is 010,20,30,40,50,60,70,80,90,100
+    */
+
+
+  </script>
+ </body>
+
+</html>
