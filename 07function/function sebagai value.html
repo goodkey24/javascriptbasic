@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funcqtion sebagai value</title>
+ </head>
+
+ <body>
+  <script>
+   // Function sebagai value
+   function sayHelloFunction( name )
+   {
+    console.log( `Halo ${ name }` );
+   }
+   let myVariable = sayHelloFunction;
+   myVariable( "Miftahul" ); // Output: Halo Miftahul
+   /*
+    Perhatikan bahwa myFunction adalah sebuah reference ke function sayHello.
+    Ketika kita mengeset atau menginisialisasi myFunction dengan value subuah function sayHello, kita hanya menyimpan alamat memory function sayHello, bukan sebuah hasil eksekusi function.
+    Ketika kita panggil variable dengan argumentnya, myFunction("Miftahul"), JavaScript akan langsung menjalankan function sayHello.
+    Jadi, myFunction() akan menampilkan "Halo Miftahul" ke console.
+    Jika kita ingin membuat function baru, kita dapat melakukan hal ini tanpa mengubah myFunction:
+    let myOtherFunction = function( name ) { console.log( `Selamat datang ${ name }` ); };
+    myOtherFunction( "Khairi" ); // Output: Selamat datang Khairi
+   */
+
+   // Function juga bisa dijadikan sebagai Parameter
+   function greet( callback )
+   {
+    callback( "Khairi" );
+   }
+
+   greet( sayHelloFunction );
+   greet( myVariable );
+
+   /*
+   fungsi dapat:
+
+Ditetapkan ke variabel (seperti myVariable)
+Dilewatkan sebagai argumen ke fungsi lain (seperti sayHelloFunction)
+Dikembalikan dari fungsi
+Disimpan dalam struktur data seperti array dan objek
+   */
+  </script>
+ </body>
+
+</html>
