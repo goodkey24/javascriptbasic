@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anonymous Function</title>
+ </head>
+
+ <body>
+  <script>
+   // anonymous function
+   const myVariable = function ( name )
+   {
+    console.log( `Hello, ${ name }!` );
+   }
+   myVariable( "Miftahul" );
+
+   // anonymous function sebagai parameter
+   function greet( callback )
+   {
+    callback( "Khairi" );
+   }
+   greet( function ( name )
+   {
+    console.log( `Halo, ${ name }!` );
+   } );
+   // jika lebih dari satu paremeter, maka bisa seperti contoh dibawah ini :
+   // greet( function ( name, age {}, function ( name, age ) {} ); dan selanjutnya...
+
+  </script>
+ </body>
+
+</html>
