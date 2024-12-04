@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scope</title>
+ </head>
+
+ <body>
+  <script>
+   // Global Scope
+   let x = 10;
+
+   // Function test() adalah Global Scope
+   function test()
+   {
+    let y = 20; // Local Scope
+    console.log( x ); // Global Scope
+    console.log( y ); // Local Scope
+   }
+
+   test();
+
+   // Function accessFunctiontest() adalah Global Scope
+   function accessFunctiontest()
+   {
+    // function test() dapat dipanggil di sini karena ia menjadi Global Scope
+    test();
+   }
+   accessFunctiontest();
+
+   // Scope Nested Function
+   function Utama()
+   {
+    const variableFunctionUtama = "==== Utama ====";
+    console.log( variableFunctionUtama );
+    function keDua()
+    {
+     const variableFunctionkeDua = "==== keDua ====";
+     console.log( variableFunctionkeDua );
+     console.log( variableFunctionUtama );
+    }
+    keDua();
+   }
+   Utama();
+
+  </script>
+ </body>
+
+</html>
