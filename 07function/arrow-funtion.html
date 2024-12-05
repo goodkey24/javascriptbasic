@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+ </head>
+
+ <body>
+  <script>
+   // const sayHello = ( name ) =>
+   // {
+   //  const say = `Hello ${ name }`
+   //  console.info( say );
+   // }
+   // sayHello( "Miftahul" );
+
+   // Arrow function tanpa block(tanpa kurung kurawal)
+   const sayHello = ( name ) => console.info( `Hello ${ name }` );
+   sayHello( "Khairi" );
+
+   // 1. Arrow Function Return Value
+   const sum = ( a, b ) =>
+   {
+    return a + b;
+   }
+   let hasil = sum( 20, 20 );
+   console.info( hasil );
+
+   //2. Arrow Function Tanpa Menggunakan kata kunci Return
+   const tambah = ( a, b ) => a + b;
+   let result = tambah( 5, 5 );
+   console.info( result );
+
+   //3. Arrow Function Tanpa tanda kurung(bisa digunakan apabila function tersebut hanya membutuhkan satu parameter)
+   const cekNilai = nilai => nilai > 70 ? "Lulus" : "Belum Lulus";
+   console.info( cekNilai( 90 ) );
+
+   //4. Arrow Function Sebagai Parameter
+   function giveMeName( callback )
+   {
+    callback( "Miftahul" );
+   }
+   giveMeName( name => console.info( `Hello ${ name }` ) );
+  </script>
+ </body>
+
+</html>
