@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kata Kunci This</title>
+  </head>
+
+  <body>
+    <script>
+      console.info( this );
+
+      function utama()
+      {
+        console.info( this );
+        function keDua()
+        {
+          console.info( this );
+        }
+        keDua();
+      }
+      utama();
+
+      const person = {
+        name: "Khairi",
+        sayHello: function ( name )
+        {
+          console.info( `Hello ${ name } my name is ${ this.name }` );
+        }
+      }
+      person.sayHello( "Miftahul" );
+
+    </script>
+  </body>
+
+</html>
