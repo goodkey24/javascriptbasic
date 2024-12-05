@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object Method</title>
+ </head>
+
+ <body>
+  <script>
+   // membuah object yang Function
+   // const person = {
+   //  name: "Miftahul",
+   //  sayHello: function ( name )
+   //  {
+   //   alert( `Hello ${ name }` );
+   //  }
+   // }
+   // person.sayHello( "Khairi" );
+
+   // Menambahkan function ke dalam object
+   const myObj = {
+    name: "Miftahul"
+   }
+
+   myObj.myVar = function ( name ) { alert( `Hello ${ name }` ) };
+
+   myObj.myVar( "Miftahul" );
+  </script>
+ </body>
+
+</html>
