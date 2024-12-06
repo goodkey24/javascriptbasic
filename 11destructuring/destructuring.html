@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+  </head>
+
+  <body>
+    <script>
+      const myArray = [ "Miftahul", "Khairi", "Judin" ];
+
+      const [ firstName, middleName, lastName, ...others ] = myArray;
+
+      console.info( firstName );
+      console.info( middleName );
+      console.info( lastName );
+
+      {
+        // Destructuring Object
+        const myObject = {
+          namaDepan: "Miftahul",
+          namaTengah: "Khairi",
+          namaBelakang: "Judin",
+          alamat: {
+            provinsi: "Jawa Barat",
+            kota: "Tapak Tuang",
+            kecamatan: "Meukek",
+          },
+          umur: 27,
+          hoby: "Ngoding",
+        };
+        const { namaDepan, namaTengah, namaBelakang, alamat: { provinsi, kota, kecamatan }, umur, hoby } = myObject;
+
+        console.info( namaDepan );
+        console.info( namaTengah );
+        console.info( namaBelakang );
+        console.info( provinsi );
+        console.info( kota );
+        console.info( kecamatan );
+        console.info( umur );
+        console.info( hoby );
+      }
+      // Destructuring di function parameter
+      function informasiOrang( { namaDepan, namaTengah, namaBelakang } )
+      {
+        console.log( namaTengah );
+        console.log( namaBelakang );
+        console.log( namaDepan );
+
+      }
+      const informasi = {
+        namaDepan: "Miftahul",
+        namaTengah: "Khairi",
+        namaBelakang: "Judin",
+      }
+
+      informasiOrang( informasi );
+
+      // Destructuring di array
+      function sum( [ a, b, c ] )
+      {
+        return a + b + c;
+      }
+      console.info( sum( [ 1, 2, 3 ] ) );
+      console.info( sum( [ 10, 20, 30 ] ) );
+
+      // Default Value Destructuring Array
+      const nama = [ "Miftahul", "Khairi", ];
+      const [ namaDepan, namaTengah, namaBelakang = "Judin" ] = nama;
+
+      console.info( namaDepan );
+      console.info( namaTengah );
+      console.info( namaBelakang );
+
+    </script>
+  </body>
+
+</html>
